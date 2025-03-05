@@ -99,4 +99,4 @@ const server = app.listen(port, () => {
 
 setupSocket(server);
 
-mongoose.connect(databaseURL).then(() => console.log("DB connected")).catch((err) => console.log(err.message));
+mongoose.connect("mongodb://mongodb:27017/mydatabase", {serverSelectionTimeoutMS: 240000}).then(() => console.log("DB connected")).catch((err) => console.log(err.message));
