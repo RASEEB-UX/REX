@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rex-backend
+  labels:
+    app: rex-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: rex-backend
+  template:
+    metadata:
+      labels:
+        app: rex-backend
+    spec:
+      containers:
+      - name: rex-backend
+        image:  raseebriyazkhan/backend-rex:latest
+        ports:
+        - containerPort: 8747
+

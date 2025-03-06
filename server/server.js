@@ -93,8 +93,8 @@ app.post("/upload-video", upload.single("video"), (req, res) => {
   
 });
 
-const server = app.listen(port, () => {
-    console.log(`Server is running @ http://localhost:${port}`);
+const server = app.listen(port, "0.0.0.0", () => {
+    console.log(`Server is running @ http://0.0.0.0:${port}`);
 });
 
 setupSocket(server);
