@@ -99,4 +99,4 @@ const server = app.listen(port, "0.0.0.0", () => {
 
 setupSocket(server);
 
-mongoose.connect("mongodb://mongodb:27017/mydatabase", {serverSelectionTimeoutMS: 240000}).then(() => console.log("DB connected")).catch((err) => console.log(err.message));
+mongoose.connect("mongodb://mongodb:27017/rex-chat-app", {serverSelectionTimeoutMS: 240000}).then(() => console.log("DB connected")).catch((err) => console.log(err.message));
