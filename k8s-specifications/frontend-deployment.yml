@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rex-deployment
+  namespace: rex-deployment
   labels:
     app: rex
 spec:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
       - name: rex-frontend
-        image: raseebriyazkhan/frontend-rex:latest
+        image: raseebriyazkhan/rex-frontend:latest
         ports:
         - containerPort: 5173
 

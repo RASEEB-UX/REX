@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rex-backend
+  namespace: rex-deployment
   labels:
     app: rex-backend
 spec:
