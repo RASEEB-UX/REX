@@ -2,11 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: backend-rex
+  namespace:  rex-deployment
 spec:
   selector:
-    app: backend-rex
+    app: rex-backend
   ports:
     - protocol: TCP
       port: 8747
       targetPort: 8747
-  type: NodePort
+  type: ClusterIP

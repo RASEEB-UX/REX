@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-pv  # Name of the Persistent Volume
+  namespace: rex-deployment
+spec:
+  capacity:
+    storage: 2Gi  # The size of the storage
+  accessModes:
+    - ReadWriteOnce  # Defines who can access the storage
+  persistentVolumeReclaimPolicy: Retain  # What happens when a pod is deleted
+  storageClassName: mongo-storage  # Storage class name
+  hostPath:
+    path: "/mnt/data/mongo"  # The actual physical path on the node
+

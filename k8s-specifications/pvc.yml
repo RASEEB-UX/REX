@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc  # Name of the claim
+  namespace: rex-deployment
+spec:
+  accessModes:
+    - ReadWriteOnce  # This must match the PV's accessModes
+  resources:
+    requests:
+      storage: 2Gi  # Requesting 2GB storage
+  storageClassName: mongo-storage  # Must match the PV storageClassName
+

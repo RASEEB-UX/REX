@@ -17,7 +17,17 @@ spec:
     spec:
       containers:
       - name: rex-backend
-        image:  raseebriyazkhan/backend-rex:latest
+        image:  raseebriyazkhan/rex-backend
         ports:
         - containerPort: 8747
+        env:
+        - name: MONGODB_URI
+          value: mongodb://mongodb:27017/rex-chat-app
+        volumeMounts:  # Corrected indentation
+        - name: mongo-storage
+          mountPath: /data/db
+      volumes:
+      - name: mongo-storage
+        persistentVolumeClaim:
+          claimName: mongo-pvc
 
